@@ -7,12 +7,15 @@ jobs:
   ubuntu:
     runs-on: ubuntu-latest
     steps:
-      run:
+      - name: ubuntu_version
+        run: lsb_release -v
   windows:
     runs-on: windows-latest
     steps:
-      run:
+      - name: windows_version
+        run: Get-ComputerInfo -Property "*version"
   macos:
     runs-on: macos-latest
     steps:
-      run: sw_vers -productVersion
+      - name: macos_version
+        run: sw_vers -productVersion
