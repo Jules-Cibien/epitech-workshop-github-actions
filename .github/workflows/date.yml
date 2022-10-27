@@ -1,1 +1,29 @@
 
+name: Date
+
+on:
+  issues:
+    types:
+      - opened
+      - edited
+      - closed
+  pull_request:
+    types:
+      - ready_for_review
+  gollum:
+    types:
+      - created
+      - edited
+      - deleted
+  schedule:
+    - cron: '0 0 1 * *'
+
+jobs:
+  print_date:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hello_date
+        run: |
+          echo "Hello, world! Today is "
+          echo "$(date -u %m)-$(date -u %d)-$(date -u %Y) $(date -u %H):$(date -u %M):$(date -u %S)"
+      
