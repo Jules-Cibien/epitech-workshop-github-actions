@@ -17,6 +17,7 @@ on:
       - deleted
   schedule:
     - cron: '0 0 1 * *'
+  workflow_dispatch:
 
 jobs:
   print_date:
